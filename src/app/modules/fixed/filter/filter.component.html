@@ -1,52 +1,10 @@
 <section class="filter-container">
     <ul>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
-        <li>
-            <button type="button">TYPE</button>
-        </li>
+      <li>
+        <button type="button" class="btn filter-btn">Ver Todos</button>
+      </li>
+      <li *ngFor="let type of filterTypes">
+        <button type="button" class="btn filter-btn {{ type }}">{{ type.toUpperCase() }}</button>
+      </li>
     </ul>
-</section>
+  </section>

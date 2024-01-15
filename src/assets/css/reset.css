@@ -72,32 +72,25 @@ input {
 /* Asegurar que todos los elementos basen su 
 ancho desde el borde y configuración global de
 estilos de scroll */
+
 * {
    box-sizing: border-box;
-	scrollbar-color: var(--color-scrollbar-light) var(--color-scrollbar-light);
    scrollbar-width: auto;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   color: var(--clr-black);
+   font-family: 'Rubik', sans-serif;
 }
 
 ::-webkit-scrollbar-thumb {
    width: 0.7rem;
-	height: 0.8rem;
-   background: var(--color-scrollbar-light);
+	height: 0.3rem;
+   background: var(--type-scroll)
 }
 
 ::-webkit-scrollbar {
    width: 0.7rem;
 	height: 0.8rem;
-   background: var(--color-scrollbar-light);
-}
-
-.dark-scroll {
-	scrollbar-color: var(--color-scrollbar-dark) var(--color-scrollbar-dark);
-}
-
-.dark-scroll::-webkit-scrollbar-thumb {
-   background: var(--color-scrollbar-dark);
-}
-
-.dark-scroll::-webkit-scrollbar {
-   background: var(--color-scrollbar-dark);
+   background: var(--type-scrollbackground);
 }

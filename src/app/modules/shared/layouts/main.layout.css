@@ -1,48 +1,30 @@
 header {
-    background: red;
-    padding: 1.6rem 0;
+    padding-top: 1.6rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--clr-gray);
+    box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, .5);;
+    margin-bottom: 2rem;
 }
 
 header nav {
-    height: 100%;
-    padding: 0 3rem;
-    max-width: 100rem;
-    margin: 0 auto;
+    width: 100rem;
 }
-
 .logo-container {
-    height: 70px;
-    background: green;
+    padding-left: 2rem;
+    pointer-events: none;
+    user-select: none
 }
 
-.logo-container figure {
-    height: 100%;
+.logo-container img {
+    width: 10rem;
+    height: 3.6rem;
 }
 
-figure img {
-    height: 100%;
+@media screen and (max-width: 1200px) {
+    header nav {
+        width: 95%;
+        /* background-color: red; */
+    }
 }
 
-
-
-
-
-
-.filter-container {
-    background: purple;
-    display: flex;
-    padding-top: 1rem;
-}  
-
-.filter-container ul {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-main {
-    padding: 0 3rem;
-    background: blue;
-}
