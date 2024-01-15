@@ -23,7 +23,11 @@
       "dom"
     ],
     "paths": {
-      
+      "@gallery/*": ["src/app/modules/gallery/*"],
+      "@models/*": ["src/app/models/*"],
+      "@posts/*": ["src/app/modules/posts/*"], 
+      "@services/*": ["src/app/services/*"],
+      "@shared/*": ["src/app/modules/shared/*"]
     }
   },
   "angularCompilerOptions": {
