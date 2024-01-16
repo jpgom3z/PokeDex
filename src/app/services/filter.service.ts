@@ -11,8 +11,8 @@ export class FilterService {
     private http: HttpClient
   ) { }
 
-  public list(): Observable<any[]> {
-    return this.http.get<any[]>('https://pokeapi.co/api/v2/type', {
+  public list(): Observable<any> {
+    return this.http.get<any>('https://pokeapi.co/api/v2/type/', {
       headers: {
         'Content-Type': 'application/json'
       }

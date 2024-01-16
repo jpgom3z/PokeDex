@@ -1,6 +1,10 @@
-export interface Type {
-    results: {
-        name: string;
-        url: string;
-    }
- }
+export interface TypeData {
+    count: number;
+    results: TypeResults[];
+  }
+
+export interface TypeResults {
+    name : string;
+    url : string;
+}
+

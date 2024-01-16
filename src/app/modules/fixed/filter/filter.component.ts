@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TypeData, TypeResults } from '@models/type';
 import { FilterService } from '@services/filter.service';
-import { Subscription } from 'rxjs';
-import { Type } from '@models/type';
 
 @Component({
   selector: 'app-filter',
@@ -10,19 +9,20 @@ import { Type } from '@models/type';
 })
 export class FilterComponent implements OnInit {
 
-  public filters: Type[];
+public data: TypeResults[];
 
-  constructor(
-    private filterService: FilterService
-  ) {
-    this.filters = [];
-  }
+constructor(
+  private filterService: FilterService
+){
+  this.data = [];
+}
 
-  public ngOnInit(): void {
-    this.filterService.list().subscribe((data) => {
-        this.filters = data;
-    });
-  }
+public ngOnInit(): void {
+  this.filterService.list().subscribe((data) => {
+    this.data = data.results;
+    console.log(this.data);
+  });
+}
 
   // filterTypes = ['normal', 'fire', 'water', 
   //               'grass', 'electric', 'ice', 
