@@ -3,8 +3,12 @@
       <li>
         <button type="button" class="btn filter-btn">Ver Todos</button>
       </li>
-      <!-- <li *ngFor="let type of filterTypes">
-        <button type="button" class="btn filter-btn {{ type }}">{{ type.toUpperCase() }}</button>
-      </li> -->
+      <!-- Ahora si podemos iterar ya que filters es solo una lista -->
+      <li *ngFor="let type of filters">
+        <ng-container *ngIf="type.name !== 'unknown'">
+          <button type="button" class="btn filter-btn {{ type.name }}">{{ type.name.toUpperCase() }}</button>
+        </ng-container>
+        <!-- <button type="button" class="btn filter-btn {{ type.name }}">{{ type.name.toUpperCase() }}</button> -->
+      </li>
     </ul>
   </section>

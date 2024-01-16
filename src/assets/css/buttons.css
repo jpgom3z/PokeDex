@@ -112,3 +112,8 @@
     background-color: var(--type-fairy);
     color: var(--clr-black);
 }
+
+.shadow {
+    background-color: var(--type-shadow);
+    color: var(--clr-white);
+}

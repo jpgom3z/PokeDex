@@ -1,33 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { TypeData, TypeResults } from '@models/type';
 import { FilterService } from '@services/filter.service';
+// import { Subscription } from 'rxjs';
+import { TypeData, TypeResults } from '@models/type';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.css']
 })
+
 export class FilterComponent implements OnInit {
 
-public data: TypeResults[];
+  public filters: TypeResults[];
 
-constructor(
-  private filterService: FilterService
-){
-  this.data = [];
-}
+  constructor( private filterService: FilterService) {this.filters = [];}
 
-public ngOnInit(): void {
-  this.filterService.list().subscribe((data) => {
-    this.data = data.results;
-    console.log(this.data);
-  });
-}
-
-  // filterTypes = ['normal', 'fire', 'water', 
-  //               'grass', 'electric', 'ice', 
-  //               'fighting', 'poison', 'ground', 
-  //               'flying', 'psychic', 'bug', 'rock', 
-  //               'ghost', 'dark', 'dragon', 'steel', 
-  //               'fairy'];
+  // Solucion: El parametro data debia ser de tipo TypeData. 
+  ngOnInit(){
+    this.filterService.list().subscribe((data : TypeData) => {
+      this.filters = data.results;
+      console.log(this.filters)
+    })
+  }
 }
