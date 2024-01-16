@@ -23,6 +23,7 @@ public ngOnInit(): void {
     console.log(this.data);
   });
 }
+
   // filterTypes = ['normal', 'fire', 'water', 
   //               'grass', 'electric', 'ice', 
   //               'fighting', 'poison', 'ground', 

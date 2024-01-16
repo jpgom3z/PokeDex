@@ -7,3 +7,4 @@ export interface TypeResults {
     name : string;
     url : string;
 }
+
