@@ -1,14 +1,18 @@
 export interface pokemonData {
-    results : Pokemon[];
+    results :{
+        height: number;
+        name: string;
+        weight: number;
+    };
 }
 
-export interface Pokemon {
-    name : string;
-    height : number;
-    weight : number;
+// export interface Pokemon {
+//     name : string;
+//     height : number;
+//     weight : number;
     // sprites : Sprites[];
     // types: Types[];
-}
+// }
 
 // export interface Types {
 //     types: {
