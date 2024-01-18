@@ -1,7 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from '@services/content/content.service';
-import { Subscription } from 'rxjs';
-import { pokemonData } from '@models/pokemon';
+import { Pokemon } from '@models/pokemon';
 
 @Component({
   selector: 'app-content',
@@ -11,20 +11,25 @@ import { pokemonData } from '@models/pokemon';
 
 export class ContentComponent implements OnInit {
 
-  public content: pokemonData;
-  private subscriptions: Subscription;
+  public pokemones: Pokemon[];
 
-  constructor( private contentService: ContentService) {
-    this.content = null;
-    this.subscriptions = new Subscription();}
-  // // Solucion: El parametro data debia ser de tipo TypeData. 
+  constructor( private contentService: ContentService) {this.pokemones = [];}
+
   ngOnInit(){
-    this.contentService.get(1).subscribe((data : pokemonData) => {
-      this.content = data;
-      console.log(this.content)
-    })
-  }
+    for (let i = 1; i < 151; i++) {
+      this.contentService.get(i).subscribe((data: any) => { 
+          const extractedData: Pokemon = {
+            name: data.name,
+            height: data.height,
+            weight: data.weight,
+            types : data.types,
+            sprites : data.sprites
+
+          };
+          this.pokemones.push(extractedData);
+        }
+      );
+    }
+    console.log(this.pokemones);
+    }
 }
-
-
-

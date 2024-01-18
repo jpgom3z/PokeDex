@@ -22,3 +22,9 @@
           </div>
     </div>
 </main> -->
+
+<ul>
+  <li *ngFor="let pokemon of pokemones">
+    <button type="button" class="btn filter-btn">El nombre del Pokemon es: {{ pokemon.name }} y su peso es {{ pokemon.weight }}</button>
+  </li>
+</ul>
