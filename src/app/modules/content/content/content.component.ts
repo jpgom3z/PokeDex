@@ -17,7 +17,7 @@ export class ContentComponent implements OnInit {
   constructor( private contentService: ContentService) {
     this.content = null;
     this.subscriptions = new Subscription();}
-  // Solucion: El parametro data debia ser de tipo TypeData. 
+  // // Solucion: El parametro data debia ser de tipo TypeData. 
   ngOnInit(){
     this.contentService.get(1).subscribe((data : pokemonData) => {
       this.content = data;
